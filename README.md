@@ -7,7 +7,7 @@ This is a port of C code from Wikipedia to Delphi:
 
 The test application (VCL) can be used either by typing the line end-points coordinates or by clicking two points in the form.
 
-![Test app shot](TestAppShot.png)
+![Test app shot](TespAppShot.png)
 
 I did that port to use with graphics32, because the standard "Safe" clipping TBitmap32.LineToAS() doesn't work for large x, y 
 
