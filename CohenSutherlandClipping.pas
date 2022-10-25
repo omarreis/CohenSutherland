@@ -22,6 +22,7 @@ const
   TOP    = 8; // 1000
 
   // Clipping rectangle corners
+var
   CRC_xmin:double=0;      //  CRC_xmin,CRC_ymin +----------------
   CRC_ymin:double=0;      //                    |               |
   CRC_xmax:double=2000;   //                    |               |
