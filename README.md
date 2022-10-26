@@ -28,7 +28,7 @@ The test application (VCL) can be used either by typing the line segment end-poi
 
     var x0,y0,x1,y1:Double;
     begin
-      x0 := 0;   y0 := 0;  x1 := 300;  y1 := 400;       // set line segmenmt end points
+      x0 := 0;   y0 := 0;  x1 := 300;  y1 := 400;       // set line segment end points
       if CohenSutherland_LineVisible(x0,y0,x1,y1) then  // if line is visible, x0,y0,x1,y1 returns.. 
          begin                                          // ..clipped line end points
            Canvas.MoveTo( Trunc(x0),  Trunc(y0) );      // draw line segment ( VCL flavour ) 
@@ -38,4 +38,8 @@ The test application (VCL) can be used either by typing the line segment end-poi
 App tested with Delphi 7 and D11.1
 
 Originally I did this port to use with graphics32, because the standard "Safe" clipping TBitmap32.LineToAS() didn't work for large x, y ( this was for 2012, don't know if it works now ). Anyway, this algorithm can be used with any graphics (ex: FMX) 
+
+Om-Oct/22
+
+#Delphi #Graphics #Cohen-Sutherland 
 
