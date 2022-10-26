@@ -9,15 +9,33 @@ The test application (VCL) can be used either by typing the line end-points coor
 
 ![Test app shot](TespAppShot.png)
 
-App tested with D11.1
+# Algorithm Usage 
 
-I did this port to use with graphics32, because the standard "Safe" clipping TBitmap32.LineToAS() doesn't work for large x, y ( this was for 2012, don't know if it works now ). Anyway, this algorithm can be used with any graphics (ex: FMX) 
+1- Add unit to uses
+    uses                           
+       CohenSutherlandClipping;
 
-See this post: 
+2- Set clipping rectangle
 
-http://graphics32.org/news/newsgroups.php?art_group=graphics32.general&article_id=11833
+    var x0,y0,x1,y1:Double;
+    begin
+      x0 := 10;   y0 := 10;  x1 := 100;  y1 := 200; 
+      CohenSutherland_SetClippingRect(xmin, ymin, xmax, ymax ); 
+      ...
+    
+3- Test line clipping
 
+    var x0,y0,x1,y1:Double;
+    begin
+      x0 := 0;   y0 := 0;  x1 := 300;  y1 := 400;       // set line segmenmt end points
+      if CohenSutherland_LineVisible(x0,y0,x1,y1) then  // f line visible, x0,y0,x1,y1 returns clipped line end points
+         begin
+           Canvas.MoveTo( Trunc(x0),  Trunc(y0) );  // draw line
+           Canvas.LineTo( Trunc(x1),  Trunc(y1) );
+         end;
+     
+App tested with Delphi 11.1
 
-
+Originally I did this port to use with graphics32, because the standard "Safe" clipping TBitmap32.LineToAS() didn't work for large x, y ( this was for 2012, don't know if it works now ). Anyway, this algorithm can be used with any graphics (ex: FMX) 
 
 
