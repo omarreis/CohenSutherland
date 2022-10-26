@@ -30,7 +30,7 @@ The test application (VCL) can be used either by typing the line segment end-poi
     begin
       x0 := 0;   y0 := 0;  x1 := 300;  y1 := 400;       // set line segmenmt end points
       if CohenSutherland_LineVisible(x0,y0,x1,y1) then  // if line is visible, x0,y0,x1,y1 returns.. 
-        begin                                           // ..clipped line end points
+         begin                                          // ..clipped line end points
            Canvas.MoveTo( Trunc(x0),  Trunc(y0) );      // draw line segment ( VCL flavour ) 
            Canvas.LineTo( Trunc(x1),  Trunc(y1) );
          end;
