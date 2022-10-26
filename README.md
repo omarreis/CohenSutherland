@@ -18,9 +18,9 @@ The test application (VCL) can be used either by typing the line end-points coor
 
 2- Set clipping rectangle
 
-    var x0,y0,x1,y1:Double;
+    var xmin, ymin, xmax, ymax:Double;
     begin
-      x0 := 10;   y0 := 10;  x1 := 100;  y1 := 200; 
+      xmin := 10;   ymin := 10;  xmax := 100;  ymax := 200; 
       CohenSutherland_SetClippingRect(xmin, ymin, xmax, ymax ); 
       ...
     
