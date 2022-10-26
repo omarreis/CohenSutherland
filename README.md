@@ -12,6 +12,7 @@ The test application (VCL) can be used either by typing the line end-points coor
 # Algorithm Usage 
 
 1- Add unit to uses
+
     uses                           
        CohenSutherlandClipping;
 
@@ -28,9 +29,9 @@ The test application (VCL) can be used either by typing the line end-points coor
     var x0,y0,x1,y1:Double;
     begin
       x0 := 0;   y0 := 0;  x1 := 300;  y1 := 400;       // set line segmenmt end points
-      if CohenSutherland_LineVisible(x0,y0,x1,y1) then  // f line visible, x0,y0,x1,y1 returns clipped line end points
+      if CohenSutherland_LineVisible(x0,y0,x1,y1) then  // if line is visible, x0,y0,x1,y1 returns clipped line end points
          begin
-           Canvas.MoveTo( Trunc(x0),  Trunc(y0) );  // draw line
+           Canvas.MoveTo( Trunc(x0),  Trunc(y0) );      // draw line segment
            Canvas.LineTo( Trunc(x1),  Trunc(y1) );
          end;
      
